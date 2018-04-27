@@ -1,0 +1,83 @@
+@media (max-height: 500px) {
+     html {
+         height: 90%;
+    }
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  
+     .header #switch,
+     .header #open  {
+        font-size: 80px;
+     }
+         .footer {
+        display: none;
+    }
+    .page .header #open,
+    .page .hidden {
+        display: initial;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {  
+     .header #switch,
+     .header #open  {
+        font-size: 70px;
+     }
+         .footer {
+        display: none;
+    }
+    .page .header #open,
+    .page .hidden {
+        display: initial;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {  
+     .header #switch,
+     .header #open  {
+        font-size: 60px;
+     }
+         .footer {
+        display: none;
+    }
+    .page .header #open,
+    .page .hidden {
+        display: initial;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+     .header #switch,
+     .header #open  {
+        font-size: 50px;
+     }
+
+    .footer {
+        display: none;
+    }
+    .page .header #open,
+    .page .hidden {
+        display: initial;
+    }
+}
+
+/* Add Footer remove Sidenav */
+ @media (min-width: 1400px) {
+    .footer {
+        display: flex;
+    }
+    .page .header #open,
+    .page .hidden {
+        display: none;
+    }
+ }

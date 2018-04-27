@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <link rel="shortcut icon" type="image/png" href="static/images/favicon.png"/>
-      <link rel="stylesheet" href="./static/index.css" >
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-      <title>Crescent Esports | Landing</title>
-   </head>
-   <body class="light-mode" id="body">
-      <script>
-         function toggleDarkLight() {
-         var body = document.getElementById("body");
-         var currentClass = body.className;
-         body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-         }
-      </script>
-      <div class="page">
-         <div class="header">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="static/images/favicon.png" />
+    <link rel="stylesheet" href="./static/index.css">
+    <link rel="stylesheet" href="./static/nav.css">
+    <link rel="stylesheet" href="./static/scale.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <script src="./scripts/cookie.js"></script>
+    <title>Crescent Esports | Landing</title>
+    <script>
+        var value = checkCookie();
+    </script>
+</head>
+
+<body id="body">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-bars"></i></a>
+        <a href="http://twitter.com/CrescentsGG"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="http://twitch.tv/crescentesports"><i class="fab fa-twitch"></i> Twitch</a>
+        <a href="https://discord.gg/TmSfVRJ"><i class="fab fa-discord"></i> Discord</a>
+        <a href="mailto:business@crescentesports.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("open").style.display = "none";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("open").style.display = "initial";
+        }
+
+        document.body.className = value;
+
+        function toggleDarkLight() {
+            var body = document.getElementById("body");
+            var currentClass = body.className;
+            var newClass = currentClass == "dark-mode" ? "light-mode" : "dark-mode"
+            body.className = newClass;
+            setCookie("mode", newClass, 365)
+        }
+    </script>
+    <div class="page">
+        <div class="header">
+            <span id="open" onclick="openNav()">&#9776;</span>
             <i onclick="toggleDarkLight()" id="switch" class="far fa-lightbulb fa-2x"></i>
-         </div>
-         <div class="content">
+        </div>
+        <div class="content">
             <img class="logo" src="./static/images/logo.png" />
             <h1>Crescent Esports</h1>
             <h2>Website Coming Soon</h2>
-         </div>
-         <div class="footer">
+        </div>
+        <div class="footer">
             <div class="social twitter">
-               <a href="http://twitter.com/CrescentsGG"><i class="fab fa-twitter fa-2x"></i> CrescentsGG</a>
+                <a href="http://twitter.com/CrescentsGG"><i class="fab fa-twitter fa-2x"></i> CrescentsGG</a>
             </div>
             <div class="social twitch">
-               <a href="http://twitch.tv/crescentesports"><i class="fab fa-twitch fa-2x"></i> CrescentEsports</a>
+                <a href="http://twitch.tv/crescentesports"><i class="fab fa-twitch fa-2x"></i> CrescentEsports</a>
+            </div>
+            <div class="social discord">
+                <a href="https://discord.gg/TmSfVRJ"><i id="discord" class="fab fa-discord fa-2x"></i> Crescent Esports</a>
             </div>
             <div class="social email">
-               <a href="mailto:business@crescentesports.com"><i  id="email" class="fas fa-envelope fa-2x"></i> business@crescentesports.com</a>
+                <a href="mailto:business@crescentesports.com"><i  id="email" class="fas fa-envelope fa-2x"></i> business@crescentesports.com</a>
             </div>
-         </div>
-      </div>
-   </body>
+        </div>
+        <div class="hidden"></div>
+    </div>
+</body>
+
 </html>
