@@ -14,7 +14,7 @@
 @media (min-width: 576px) {  
      .header #switch,
      .header #open  {
-        font-size: 80px;
+        font-size: 60px;
      }
          .footer {
         display: none;
@@ -44,7 +44,7 @@
 @media (min-width: 992px) {  
      .header #switch,
      .header #open  {
-        font-size: 60px;
+        font-size: 80px;
      }
          .footer {
         display: none;
