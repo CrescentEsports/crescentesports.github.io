@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <script src="./scripts/cookie.js"></script>
+    <script src="./scripts/popout.js"></script>
     <title>Crescent Esports | Landing</title>
     <script>
         var value = checkCookie();
@@ -22,17 +23,15 @@
         <a href="http://twitter.com/CrescentsGG"><i class="fab fa-twitter"></i> Twitter</a>
         <a href="http://twitch.tv/crescentesports"><i class="fab fa-twitch"></i> Twitch</a>
         <a href="https://discord.gg/TmSfVRJ"><i class="fab fa-discord"></i> Discord</a>
-        <a href="mailto:business@crescentesports.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="mailto:business@crescentesports.com"><i class="fas fa-envelope"></i> Contact Us</a>
     </div>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("open").style.display = "none";
         }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("open").style.display = "initial";
         }
 
         document.body.className = value;
@@ -45,6 +44,25 @@
             setCookie("mode", newClass, 365)
         }
     </script>
+
+
+<div id="popout">
+<!-- Popup Div Starts Here -->
+<div id="popupContact">
+<!-- Contact Us Form -->
+<form action="#" id="form" method="post" name="form">
+<img id="close" src="images/3.png" onclick ="div_hide()">
+<h2>Contact Us</h2>
+<hr>
+<input id="input_name" name="name" placeholder="Name" type="text">
+<input id="input_email" name="email" placeholder="Email" type="text">
+<textarea id="input_msg" name="message" placeholder="Message"></textarea>
+<a href="javascript:%20check_empty()" id="submit">Send</a>
+</form>
+</div>
+<!-- Popup Div Ends Here -->
+</div>
+
     <div class="page">
         <div class="header">
             <span id="open" onclick="openNav()">&#9776;</span>
@@ -66,7 +84,7 @@
                 <a href="https://discord.gg/TmSfVRJ"><i id="discord" class="fab fa-discord fa-2x"></i> Crescent Esports</a>
             </div>
             <div class="social email">
-                <a href="mailto:business@crescentesports.com"><i  id="email" class="fas fa-envelope fa-2x"></i> business@crescentesports.com</a>
+                <a onclick="div_show()"><i  id="email" class="fas fa-envelope fa-2x"></i> Contact Us</a>
             </div>
         </div>
         <div class="hidden"></div>
